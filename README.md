@@ -7,6 +7,10 @@ We can also add Packet rules which are applied to the host ports and remote IP a
 
 Refer to the rules_example.txt to see what the rules look like.
 
+NOTE: CPU usage is calculated by total time spent in running state in 2 seconds.
 
+Also to be noted the rules are a sort of linked list, which are arranged accoring to priority. 
+
+There are a several other details, I am too lazy to include. 
 
 THIS IS DONE IN VIEW OF MY FINALY YEAR PROJECT(19BCE1344)
