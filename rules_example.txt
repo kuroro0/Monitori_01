@@ -1,12 +1,3 @@
-what should the kernel module have:
-
-	1. block protocol
-	2. block IP
-	3. block port
-	
-
-How to implement combination of these ?
-
 
 TWO/THREE TYPES OF RULES: 
 
@@ -15,12 +6,13 @@ DROP PACKET
 ACCEPT PACKET
 
 
-	1. Form a rule                                          6
-	ex:  	[RULE-NO $RULENO PRIORITY $PRIORITY KILL PID $PID] MEM-RANGE $MEM-RANGE PROTOCOL $PROTO
+	1. Form a rule (the text in [] should follow the order and is compulsory)
+	
+	ex:  	[RULE-NO $RULENO PRIORITY $PRIORITY KILL PID $PID] MEM-RANGE $MEM-RANGE PROTOCOL $PROTO ...
 		
 		DELETE RULE-NO $RULENO 
 		
-		[RULE-NO $ PRIORITY $ DROP] PROTOCOL $ IP-RANGE $
+		[RULE-NO $ PRIORITY $ DROP] PROTOCOL $ IP-RANGE ....
 		
 	Parameters are:
 	1. mem-range
@@ -67,20 +59,6 @@ RULE-NO 2 PRIORITY 6 KILL PID 0  IP-RANGE 34.117.65.55-50.50.50.3
 RULE-NO 229 PRIORITY 2 KILL PID 0 CPU-RANGE 0-10 PROTOCOL TCP
 RULE-NO 39 PRIORITY 2 KILL PID 0 PORT-RANGE 20000-60000 PROTOCOL UDP
 
-
-How to check everything ??
-First check PIDs:
-		1) Kill based on CPU
-		2) kill based on CPU and memory
-		3) kill based on CPU and protocol
-		4) kill based on memory and IP
-		5) kill based on PID and port
-		6) kill based on CPU memory protocol IP and port
-
-Then firewall rules:
-		1)Drop based on port and IP
-		2)Accept based on protocol
-		3)Delete a rule
 
 
 
